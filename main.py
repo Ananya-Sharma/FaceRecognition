@@ -48,17 +48,18 @@ FRmodel.compile(optimizer = 'adam', loss = triplet_loss, metrics = ['accuracy'])
 load_weights_from_FaceNet(FRmodel)
 
 database = {}
+database["ananya"] = img_to_encoding("images/ananya.jpg", FRmodel)
+database["aabha"] = img_to_encoding("images/aabha1.jpg", FRmodel)
+database["emma"] = img_to_encoding("images/emmaa2.jpg", FRmodel)
 database["daniel"] = img_to_encoding("images/daniel.jpg", FRmodel)
 database["younes"] = img_to_encoding("images/younes.jpg", FRmodel)
-database["emma"] = img_to_encoding("images/emmaa2.jpg", FRmodel)
 database["andrew"] = img_to_encoding("images/andrew.jpg", FRmodel)
-database["aabha"] = img_to_encoding("images/aabha1.jpg", FRmodel)
 database["dan"] = img_to_encoding("images/dan.jpg", FRmodel)
 database["bertrand"] = img_to_encoding("images/bertrand.jpg", FRmodel)
 database["kevin"] = img_to_encoding("images/kevin.jpg", FRmodel)
 database["benoit"] = img_to_encoding("images/benoit.jpg", FRmodel)
 database["arnaud"] = img_to_encoding("images/arnaud.jpg", FRmodel)
-database["ananya"] = img_to_encoding("images/ananya.jpg", FRmodel)
+
 
 for key in database:
     path = "/content/FaceRecognition/" + key
