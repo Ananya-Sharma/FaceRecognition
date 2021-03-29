@@ -48,11 +48,11 @@ FRmodel.compile(optimizer = 'adam', loss = triplet_loss, metrics = ['accuracy'])
 load_weights_from_FaceNet(FRmodel)
 
 database = {}
-database["danielle"] = img_to_encoding("images/danielle.png", FRmodel)
+database["daniel"] = img_to_encoding("images/daniel1.png", FRmodel)
 database["younes"] = img_to_encoding("images/younes.jpg", FRmodel)
 database["emma"] = img_to_encoding("images/emmaa2.jpg", FRmodel)
 database["andrew"] = img_to_encoding("images/andrew.jpg", FRmodel)
-database["aabha"] = img_to_encoding("images/aabha.jpg", FRmodel)
+database["aabha"] = img_to_encoding("images/aabha1.jpg", FRmodel)
 database["dan"] = img_to_encoding("images/dan.jpg", FRmodel)
 database["bertrand"] = img_to_encoding("images/bertrand.jpg", FRmodel)
 database["kevin"] = img_to_encoding("images/kevin.jpg", FRmodel)
@@ -69,7 +69,7 @@ def verify(image_path, identity, database, model):
     encoding = img_to_encoding(image_path, model)
     dist = np.linalg.norm(encoding - database[identity])
     
-    if dist < 0.43:
+    if dist < 0.435:
         print("It's " + str(identity))
         door_open = True
     else:
