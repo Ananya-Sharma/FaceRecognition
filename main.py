@@ -66,7 +66,7 @@ def verify(image_path, identity, database, model):
     encoding = img_to_encoding(image_path, model)
     dist = np.linalg.norm(encoding - database[identity])
     
-    if dist < 0.68:
+    if dist < 0.7:
         print("It's " + str(identity))
         door_open = True
     else:
